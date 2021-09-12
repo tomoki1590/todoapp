@@ -1,5 +1,7 @@
-import 'package:firebase_practice_todo/module/todo.dart';
+import 'package:firebase_practice_todo/model/todo.dart';
 import 'package:flutter/material.dart';
+
+import 'model/todo.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
