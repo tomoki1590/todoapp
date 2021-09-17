@@ -1,13 +1,11 @@
 import 'package:firebase_practice_todo/edit_component.dart';
 import 'package:firebase_practice_todo/model/todo.dart';
-import 'package:firebase_practice_todo/repository.dart';
+//import 'package:firebase_practice_todo/repository.dart';
 import 'package:flutter/material.dart';
 
 import 'model/todo.dart';
 
 class HomeScreen extends StatefulWidget {
-  final TodoRepository repository;
-  HomeScreen(this.repository);
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
