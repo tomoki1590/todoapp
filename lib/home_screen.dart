@@ -1,21 +1,18 @@
 import 'package:firebase_practice_todo/edit_component.dart';
 import 'package:firebase_practice_todo/model/todo.dart';
+import 'package:firebase_practice_todo/repository.dart';
 import 'package:flutter/material.dart';
 
 import 'model/todo.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
-
+  final TodoRepository repository;
+  HomeScreen(this.repository);
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
 class _HomeScreenState extends State<HomeScreen> {
-   List <Todo> _todos = [
-    Todo(title: "title"),
-    Todo(title: "TodoApp")
-  ];
-
+   List <Todo> _todos = [];
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -51,11 +48,9 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Icon(Icons.add),
           onPressed: () async {
             final result = await EditDialog.show(context);
-            if (null!= result) {
-              setState(() {
-                _todos.add(result);
-              });
-            }
+            setState(() {
+              _todos.add(result);
+            });
           },
         ),
       ),
