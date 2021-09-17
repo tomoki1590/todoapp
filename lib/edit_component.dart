@@ -3,12 +3,10 @@ import 'package:flutter/material.dart';
 
 class EditDialog extends StatefulWidget {
 
-  static Future<void> show(BuildContext context) {
-    return showDialog(
+  static  Future<Todo>  show(BuildContext context) async => await showDialog(
       context: context,
       builder: (context) => EditDialog(),
     );
-  }
 
   EditDialog({this.base}) : super();
   final Todo? base;
@@ -38,7 +36,7 @@ class _EditDialogState extends State<EditDialog> {
           onPressed: () {
             Navigator.pop(
               context,
-              Todo(title: "後でここに入力値を入れます"),
+              Todo(title: _textEditingController.text),
             );
           },
           child: Text("保存する"),

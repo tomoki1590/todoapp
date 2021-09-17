@@ -11,7 +11,7 @@ class HomeScreen extends StatefulWidget {
   _HomeScreenState createState() => _HomeScreenState();
 }
 class _HomeScreenState extends State<HomeScreen> {
-  List <Todo> _todos = [
+   List <Todo> _todos = [
     Todo(title: "title"),
     Todo(title: "TodoApp")
   ];
@@ -36,7 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     });
                   },),
                 onLongPress: ()async{
-                  final result =await EditDialog.show(context, todo);
+                  final result =await EditDialog.show(context);
                   if(result !=null){
                     setState(() {
                       _todos[index] = result;
@@ -51,7 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Icon(Icons.add),
           onPressed: () async {
             final result = await EditDialog.show(context);
-            if (result != null) {
+            if (null!= result) {
               setState(() {
                 _todos.add(result);
               });
@@ -61,6 +61,4 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
-
-  static void add(void todo) {}
 }
