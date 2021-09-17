@@ -7,7 +7,7 @@ class FireBaseApp extends StatefulWidget {
   _FireBaseAppState createState() => _FireBaseAppState();
 }
 class _FireBaseAppState extends State<FireBaseApp> {
-  final Stream<QuerySnapshot> _usersStream = FirebaseFirestore.instance.collection('book').snapshots();
+  final Stream<QuerySnapshot> _usersStream = FirebaseFirestore.instance.collection('todo').snapshots();
 
   @override
   Widget build(BuildContext context) {
@@ -29,8 +29,8 @@ class _FireBaseAppState extends State<FireBaseApp> {
             children: snapshot.data!.docs.map((DocumentSnapshot document) {
               Map<String, dynamic> data = document.data()! as Map<String, dynamic>;
               return ListTile(
-                title: Text(data['author']),
-                subtitle: Text(data['title']),
+                title: Text(data['TODO']),
+                //subtitle: Text(data['']),
 
               );
             }).toList(),
