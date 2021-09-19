@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 PODS:
   - abseil/algorithm (0.20200225.0):
     - abseil/algorithm/algorithm (= 0.20200225.0)
@@ -473,5 +474,8 @@ SPEC CHECKSUMS:
   shared_preferences: af6bfa751691cdc24be3045c43ec037377ada40d
 
 PODFILE CHECKSUM: 4e8f8b2be68aeea4c0d5beb6ff1e79fface1d048
+=======
+PODFILE CHECKSUM: 683bd72537c61e4afe18ea579928f7bc68577369
+>>>>>>> 0a0a752c21763d865799d3e210e6d5bdac3196e5
 
 COCOAPODS: 1.11.0
