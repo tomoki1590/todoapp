@@ -1,8 +1,8 @@
+import 'package:firebase_practice_todo/edit_component.dart';
 import 'package:flutter/material.dart';
 import 'model/todo.dart';
 
 class TodoListPage extends StatefulWidget {
-  const TodoListPage({Key? key}) : super(key: key);
 
   @override
   _TodoListPageState createState() => _TodoListPageState();
@@ -33,13 +33,34 @@ class _TodoListPageState extends State<TodoListPage> {
                 setState(() {
                   _todos[index] =
                   ///Todo 三項演算子
-                      Todo(title: todo.title, done: checked = false);
+                      Todo(title: todo.title, done: checked  ?? false);
                 });
               },
             ),
+            onTap: ()async{
+              final result = await EditDialog.show(BuildContext, context);
+            if (result !=null)
+              setState(() {
+                _todos[index] = result;
+              });
+              },
+
           );
         },
       ),
-    );
+      floatingActionButton:FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed:() async {
+         final todo = await EditDialog.show(BuildContext, context);
+          if (todo != null) {
+           setState(() {
+              _todos.add(todo);
+
+            }
+            );
+            }
+        }),
+          );
+
+        }
   }
-}
