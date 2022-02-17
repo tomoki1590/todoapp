@@ -1,3 +1,4 @@
+import 'package:firebase_practice_todo/repository.dart';
 import 'package:firebase_practice_todo/todo_list.dart';
 import 'package:flutter/material.dart';
 
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "TodoMemo",
       theme: ThemeData.light(),
-      home:  TodoListPage(),
+      home:  TodoListPage(TodoRepository()),
     );
   }
 }
